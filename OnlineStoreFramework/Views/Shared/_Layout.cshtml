@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/CartCounter.css" rel="stylesheet" />
+    <style>
+        .navbar-inverse {
+            background-color: #A020F0;
+            border-color: #A020F0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" style="background-color:white;width:100%;padding-right:100px;padding-left:100px">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-size:30px;font-family:'Bradley Hand ITC';color:#A020F0" href="@Url.Action("Index","Home")"><b>Fabstyles</b></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">
+                            <img style="max-width:100%;width:30px" src="~/Social Images/facebook (1).png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img style="max-width:100%;width:30px" src="~/Social Images/twitter (1).png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img style="max-width:100%;width:30px" src="~/Social Images/instagram.png" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a style="color:white" href="@Url.Action("About","Home")">About</a>
+                    </li>
+                    <li>
+                        <a style="color:white" href="@Url.Action("Products","Home")">Products</a>
+                    </li>
+                    <li>
+                        <a style="color:white" href="@Url.Action("Customer Service","Home")">Customer Service</a>
+                    </li>
+                    <li>
+                        <a style="color:white" href="@Url.Action("Contact","Home")">Contact</a>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br /><br />
+        @RenderBody()
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ae38270227d3d7edc24cc16/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
